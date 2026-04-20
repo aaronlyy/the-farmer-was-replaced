@@ -10,17 +10,20 @@ def default(coords, f):
                 
             util.move_to(x,y)
             
-def pumpkin(coords, f):
-    for c in coords:
-        for x in range(c["start"][0], c["stop"][0] + 1):
-            for y in range(c["start"][1], c["stop"][1] + 1):
+def pumpkin(coords, f, field):
+    if len(field) == 0:
+        for c in coords:
+            for x in range(c["start"][0], c["stop"][0] + 1):
+                for y in range(c["start"][1], c["stop"][1] + 1):
+                  field.append((x,y))
                 
-                util.move_to(x,y)
-                
-                f()
-                
-            util.move_to(x,y)
-    return dead
+    new_field = []  
+    for k in field:
+        util.move_to(k[0], k[1])
+        ready = f()
+        if not ready:
+            new_field.append((k[0],k[1]))
+    return new_field
 
 def chessboard(coords, f1, f2):
     for c in coords:

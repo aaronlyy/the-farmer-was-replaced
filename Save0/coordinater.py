@@ -1,7 +1,8 @@
 import util
 
-def run(tasks):
+def run(routines):
     while True:
-        for task in tasks:
-            task["func"](task["coords"])
+        for routine in routines:
+            for task in routine:
+                task["func"](task["coords"])
         

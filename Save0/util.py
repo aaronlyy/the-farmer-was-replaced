@@ -32,5 +32,16 @@ def move_to(x, y):
     elif current_y < y:
         for y in range(dist_y):
             move(North) 
-            
+
+def all(l) -> Bool:
+    for i in l:
+        if not i:
+            return False
+    return True
+
+def pumpkin_ready(field):
+    return all(field)
+    
+def coords_to_list(coords):
+    pass
     
