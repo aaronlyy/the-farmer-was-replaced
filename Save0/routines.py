@@ -1,14 +1,31 @@
-import util
 import tasks
 
-def default():
-    if get_pos_x() < 4 and (util.is_odd("x") and not util.is_odd("y") or util.is_odd("y") and not util.is_odd("x")):
-        tasks.tree()
-        return
-                
-    if get_pos_x() < 4:
-        tasks.carrot()
-            
-    if get_pos_x() >= 4:
-        tasks.pumpkin()
-
+default = [
+    {
+        "func": tasks.carrots,
+        "coords": [
+            {
+                "start": (1,1),
+                "stop": (2,2)
+            }
+        ]
+    },
+    {
+        "func": tasks.trees_and_carrots,
+        "coords": [
+            {
+                "start": (3,3),
+                "stop": (4,4)
+            }
+        ]
+    },
+    {
+        "func": tasks.big_pumpkin,
+        "coords": [
+            {
+                "start": (8,0),
+                "stop": (15,7)
+            }
+        ]
+    }
+]
