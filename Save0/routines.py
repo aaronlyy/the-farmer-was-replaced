@@ -2,7 +2,25 @@ import tasks
 
 default = [
     {
-        "func": tasks.carrots,
+        "func": tasks.trees_and_carrots,
+        "coords": [
+            {
+                "start": (0,0),
+                "stop": (15,15)
+            }
+        ]
+    },
+    {
+        "func": tasks.sunflower,
+        "coords": [
+            {
+                "start": (0,0),
+                "stop": (15,15)
+            }
+        ]
+    },
+    {
+        "func": tasks.hay,
         "coords": [
             {
                 "start": (0,0),
@@ -13,7 +31,7 @@ default = [
 ]
 
 
-biggggg_pumkin = [
+big_pumpkinn = [
     {
         "func": tasks.big_pumpkin,
         "coords": [
